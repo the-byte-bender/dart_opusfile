@@ -34,13 +34,11 @@ class OpusFile {
           break;
         }
       }
-      data = Uint8List(pcmLength * bytesPerSample * channels);
-      Pointer<Uint8> tempCBuffer = cBuffer.cast<Uint8>();
-      for (int i = 0; i < data.length; i++) {
-        data[i] = tempCBuffer[i];
-      }
+      data = cBuffer
+          .asTypedList(pcmLength * channels, finalizer: calloc.nativeFree)
+          .buffer
+          .asUint8List();
     } finally {
-      calloc.free(cBuffer);
       _bindings.op_free(_ofPointer);
     }
   }
