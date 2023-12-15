@@ -1,3 +1,7 @@
+## 1.0.1
+
+- Update license to lgpl.
+
 ## 1.0.0
 
 - Initial version.
