@@ -1,0 +1,35 @@
+name: dart_opusfile
+description: A starting point for Dart libraries or applications.
+version: 1.0.0
+repository: https://github.com/the-byte-bender/dart_opusfile
+ffigen:
+  name: 'OpusfileBindings'
+  description: 'Bindings to libopusfile'
+  output: 'lib/src/opusfile_generated_bindings.dart'
+  preamble: |
+    // ignore_for_file: always_specify_types, unused_element, unused_field
+    // ignore_for_file: camel_case_types
+    // ignore_for_file: non_constant_identifier_names
+  headers:
+    entry-points:
+      - 'headers/opusfile.h'
+  functions:
+    leaf:
+      include:
+        - '.*'
+    expose-typedefs:
+      include:
+        - '.*'
+
+environment:
+  sdk: ^3.2.3
+
+# Add regular dependencies here.
+dependencies:
+  ffi: ^2.1.0
+  # path: ^1.8.0
+
+dev_dependencies:
+  ffigen: ^10.0.0
+  lints: ^3.0.0
+  test: ^1.24.0
