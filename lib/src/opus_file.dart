@@ -3,14 +3,21 @@ import "dart:typed_data";
 import "package:ffi/ffi.dart";
 import "./opusfile_generated_bindings.dart";
 
+/// Represents the result of decoding the opus file, as well as the raw pcm data.
 class OpusFile {
-  static const int bytesPerSample = 2;
   final OpusfileBindings _bindings;
   late final Pointer<OggOpusFile> _ofPointer;
+
+  /// The number of channels: mono, stereo, etc.
   late final int channels;
+
+  /// The sampling rate. Always 48000, as this is how opus works.
   final int rate = 48000;
+
+  /// The decoded pcm data.
   late final Uint8List data;
 
+  /// @nodoc
   OpusFile(this._bindings, String path) {
     Pointer<Utf8> cPath = path.toNativeUtf8();
     _ofPointer = _bindings.op_open_file(cPath.cast<Char>(), nullptr);
