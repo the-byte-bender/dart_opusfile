@@ -1,5 +1,5 @@
 name: dart_opusfile
-description: A starting point for Dart libraries or applications.
+description: Dart bindings for libopusfile, for decoding ogg opus files.
 version: 1.0.0
 repository: https://github.com/the-byte-bender/dart_opusfile
 ffigen:
