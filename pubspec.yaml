@@ -1,5 +1,5 @@
 name: dart_opusfile
-description: Dart bindings for libopusfile, for decoding ogg opus files.
+description: Dart bindings for libopusfile, for decoding ogg opus files into pcm data.
 version: 1.0.0
 repository: https://github.com/the-byte-bender/dart_opusfile
 ffigen:
