@@ -1,3 +1,7 @@
+## 1.1.0
+
+- Added support for loading files from memory.
+
 ## 1.0.1
 
 - Update license to lgpl.
