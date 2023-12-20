@@ -1,3 +1,7 @@
+## 1.1.1
+
+Fixes late initialization error with decodeFromMemory.
+
 ## 1.1.0
 
 - Added support for loading files from memory.
