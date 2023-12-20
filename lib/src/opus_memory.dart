@@ -44,7 +44,7 @@ class OpusMemoryFile {
           break;
         }
       }
-      data = cBuffer
+      this.data = cBuffer
           .asTypedList(pcmLength * channels, finalizer: calloc.nativeFree)
           .buffer
           .asUint8List();
